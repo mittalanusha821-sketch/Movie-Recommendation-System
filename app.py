@@ -139,8 +139,8 @@ with tab_explore:
 
     st.subheader("Similarity matrix")
     st.caption("Every movie compared against every other movie (1.0 = identical, 0.0 = no shared themes).")
-    sim_df = pd.DataFrame(similarity_matrix, index=MOVIES["title"], columns=MOVIES["title"])
-    st.dataframe(sim_df.style.background_gradient(cmap="Blues").format("{:.2f}"), use_container_width=True)
+    sim_df = pd.DataFrame(similarity_matrix, index=MOVIES["title"], columns=MOVIES["title"]).round(2)
+    st.dataframe(sim_df, use_container_width=True)
 
 st.divider()
 st.caption(
